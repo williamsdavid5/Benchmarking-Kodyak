@@ -1,0 +1,29 @@
+.janelaMenuLateral {
+    background-color: var(--corDestaque1);
+    width: 20%;
+    height: 100dvh;
+    box-sizing: border-box;
+    padding: 20px;
+    color: var(--corJanela);
+}
+
+.janelaMenuLateral a {
+    text-decoration: none;
+    color: var(--corJanela);
+}
+
+.menuLateralLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.menuLateralLinks .itemLink {
+    padding: 10px;
+}
+
+.logoMenuLateral {
+    width: 60%;
+    object-fit: contain;
+}

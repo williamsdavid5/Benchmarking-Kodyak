@@ -1,0 +1,34 @@
+html,
+main,
+body,
+#root {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+p,
+a {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Archivo Black", sans-serif;
+}
+
+:root {
+    --corDestaque1: #00437a;
+    --corDestaque2: #a8cf45;
+    --corJanela: white;
+    --corBackgroundJanela: rgb(229, 238, 240);
+}
