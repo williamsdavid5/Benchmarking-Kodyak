@@ -5,16 +5,16 @@
     min-height: 0;
     box-sizing: border-box;
     background-color: var(--corJanela);
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
 }
 
 .blocosDestaque {
     width: 100%;
-    margin: 20px 0px;
+    margin: 10px 0px;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
 }
@@ -55,4 +55,19 @@
 
 .tabela-produtos {
     width: 100%;
+}
+
+.botaoCotacao {
+    background-color: var(--corDestaque2);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.botaoCotacao:hover {
+    background-color: white;
+    color: black;
 }

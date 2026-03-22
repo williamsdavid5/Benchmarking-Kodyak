@@ -141,24 +141,31 @@ export default function Inicial() {
                     </div>
                 </section>
                 <section className='ultimasCotacoesPendentesLista'>
-                    <h3>Últimas solicitações de compra</h3>
+                    <h3>Cotações pendentes</h3>
+                    <p>Últimas solicitações enviadas para a esoclha do fornecedor, organizadas das mais recentes para as mais antigas.</p>
                     <div className="tabela-container">
                         <table className="tabela-produtos">
                             <thead>
                                 <tr>
-                                    <th>Nome do Produto</th>
                                     <th>Código Interno</th>
+                                    <th>Produto</th>
                                     <th>Fornecedor</th>
                                     <th>Último Preço</th>
+                                    <th>Ação</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {produtosNutricaoAnimal.map((produto) => (
                                     <tr key={produto.id}>
-                                        <td>{produto.nome}</td>
                                         <td>{produto.codigoInterno}</td>
+                                        <td>{produto.nome}</td>
                                         <td>{produto.fornecedor}</td>
                                         <td>{formatarPreco(produto.ultimoPreco)}</td>
+                                        <td>
+                                            <button className='botaoCotacao'>
+                                                Resolver
+                                            </button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
