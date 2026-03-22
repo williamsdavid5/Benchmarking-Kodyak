@@ -32,3 +32,53 @@ h3 {
     --corJanela: white;
     --corBackgroundJanela: rgb(229, 238, 240);
 }
+
+
+/* Container padrão para tabelas com rolagem */
+.table-container {
+    max-height: 400px;
+    /* altura máxima visível */
+    overflow-y: auto;
+    /* ativa rolagem vertical */
+}
+
+/* Estilo base para todas as tabelas */
+table {
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* ocupa toda a largura */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Cabeçalho fixo */
+table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--corDestaque1);
+    color: white;
+    /* fundo sólido para não ficar transparente */
+    z-index: 2;
+}
+
+/* Células */
+table th,
+table td {
+    border: none;
+    margin: 0;
+    padding: 5px;
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+table tr {
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+}

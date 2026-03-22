@@ -23,10 +23,11 @@
     padding-left: 20px;
     width: 100%;
     border-top: inset 1px rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
 }
 
 .menuLateralLinks a:hover {
-    background-color: var(--corDestaque2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 
@@ -43,4 +44,9 @@
 .logoMenuLateral {
     object-fit: contain;
     width: 50%;
+}
+
+.ativo {
+    background-color: var(--corDestaque2);
+    font-weight: bold;
 }

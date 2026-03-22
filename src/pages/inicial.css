@@ -1,0 +1,58 @@
+.mainPadrao {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    box-sizing: border-box;
+    background-color: var(--corJanela);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blocosDestaque {
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blocoDestaque {
+    background-color: var(--corBackgroundJanela);
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 33%;
+    height: 150px;
+}
+
+.blocoDestaque h1 {
+    flex: 1;
+    text-align: center;
+    font-size: 60px;
+}
+
+.ultimasCotacoesPendentesLista {
+    background-color: var(--corBackgroundJanela);
+    flex: 1;
+    gap: 5px;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tabela-container {
+    background-color: var(--corJanela);
+    border-radius: 5px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.tabela-produtos {
+    width: 100%;
+}

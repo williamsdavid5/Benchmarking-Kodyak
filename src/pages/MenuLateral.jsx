@@ -1,7 +1,6 @@
 import './menulateral.css';
 import LogoBranca from '../assets/kodyakLogoBranca.png'
-import { Link } from "react-router-dom";
-
+import { NavLink } from "react-router-dom";
 export default function MenuLateral() {
     return (
         <>
@@ -10,11 +9,10 @@ export default function MenuLateral() {
                     <img src={LogoBranca} alt="" className='logoMenuLateral' />
                 </div>
                 <div className='menuLateralLinks'>
-                    <Link to="/">Início</Link>
-                    <Link to="/cotacoes">Cotações solicitadas</Link>
-                    <Link to="/produtos-fornecedores">Produtos e Fornecedores</Link>
-                    <Link to="/dashboard">Dashboard</Link>
-
+                    <NavLink to="/" className={({ isActive }) => isActive ? "ativo" : ""}>Início</NavLink>
+                    <NavLink to="/cotacoes" className={({ isActive }) => isActive ? "ativo" : ""}>Cotações solicitadas</NavLink>
+                    <NavLink to="/produtos-fornecedores" className={({ isActive }) => isActive ? "ativo" : ""}>Produtos e Fornecedores</NavLink>
+                    <NavLink to="/dashboard" className={({ isActive }) => isActive ? "ativo" : ""}>Dashboard</NavLink>
                 </div>
             </aside>
         </>
