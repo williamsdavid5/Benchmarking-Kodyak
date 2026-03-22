@@ -1,24 +1,20 @@
 import './menulateral.css';
 import LogoBranca from '../assets/kodyakLogoBranca.png'
+import { Link } from "react-router-dom";
 
 export default function MenuLateral() {
     return (
         <>
             <aside className='janelaMenuLateral'>
-                <img src={LogoBranca} alt="" className='logoMenuLateral' />
+                <div className='auxLogo'>
+                    <img src={LogoBranca} alt="" className='logoMenuLateral' />
+                </div>
                 <div className='menuLateralLinks'>
-                    <div className='itemLink'>
-                        <a href="">Início</a>
-                    </div>
-                    <div className='itemLink'>
-                        <a href="">Cotações Solicitadas</a>
-                    </div>
-                    <div className='itemLink'>
-                        <a href="">Produtos e Fornecedores</a>
-                    </div>
-                    <div className='itemLink'>
-                        <a href="">Dashboard</a>
-                    </div>
+                    <Link to="/">Início</Link>
+                    <Link to="/cotacoes">Cotações solicitadas</Link>
+                    <Link to="/produtos-fornecedores">Produtos e Fornecedores</Link>
+                    <Link to="/dashboard">Dashboard</Link>
+
                 </div>
             </aside>
         </>
