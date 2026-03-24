@@ -149,7 +149,7 @@ export default function Inicial() {
                                 <tr>
                                     <th>Código Interno</th>
                                     <th>Produto</th>
-                                    <th>Fornecedor</th>
+                                    <th>Último Fornecedor</th>
                                     <th>Último Preço</th>
                                     <th>Ação</th>
                                 </tr>

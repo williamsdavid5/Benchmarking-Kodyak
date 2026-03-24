@@ -13,6 +13,7 @@ h2,
 h3,
 h4 {
     margin: 0;
+    padding: 0;
 }
 
 p,
@@ -24,6 +25,24 @@ h1,
 h2,
 h3 {
     font-family: "Archivo Black", sans-serif;
+}
+
+button {
+    background-color: var(--corDestaque1);
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--corDestaque2);
+}
+
+.tituloFonteFina {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 :root {

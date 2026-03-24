@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import './cotacoes.css'
 
+import FecharCotacao from './FecharCotacao';
+
 export default function Cotacoes() {
+
+    const [janelaFecharCotacao, setjanelaFecharCotacao] = useState(false);
+    const [cotacaoSelecionada, setCotacaoSelecionada] = useState(null);
+
     const cotacoesPendentes = [
         {
             id: 1,
@@ -340,7 +347,7 @@ export default function Cotacoes() {
                                 <tr>
                                     <th>Código Interno</th>
                                     <th>Produto</th>
-                                    <th>Fornecedor</th>
+                                    <th>Último Fornecedor</th>
                                     <th>Último Preço</th>
                                     <th>Ação</th>
                                 </tr>
@@ -353,7 +360,13 @@ export default function Cotacoes() {
                                         <td>{produto.fornecedor}</td>
                                         <td>{formatarPreco(produto.ultimoPreco)}</td>
                                         <td>
-                                            <button className='botaoCotacao'>
+                                            <button
+                                                className='botaoCotacao'
+                                                onClick={() => {
+                                                    setjanelaFecharCotacao(true);
+                                                    setCotacaoSelecionada(produto);
+                                                }}
+                                            >
                                                 Resolver
                                             </button>
                                         </td>
@@ -407,6 +420,14 @@ export default function Cotacoes() {
                     </div>
                 </section>
             </main>
+            {janelaFecharCotacao && (
+                <>
+                    <FecharCotacao
+                        setJanelaCotacoes={setjanelaFecharCotacao}
+                        cotacaoSelecionada={cotacaoSelecionada}
+                    ></FecharCotacao>
+                </>
+            )}
         </>
     )
 }
