@@ -1,7 +1,11 @@
 import './inicial.css'
 import { useState } from 'react'
 
+import FecharCotacao from './FecharCotacao';
+
 export default function Inicial() {
+    const [janelaFecharCotacao, setjanelaFecharCotacao] = useState(false);
+    const [cotacaoSelecionada, setCotacaoSelecionada] = useState(null);
 
     const produtosNutricaoAnimal = [
         {
@@ -162,7 +166,13 @@ export default function Inicial() {
                                         <td>{produto.fornecedor}</td>
                                         <td>{formatarPreco(produto.ultimoPreco)}</td>
                                         <td>
-                                            <button className='botaoCotacao'>
+                                            <button
+                                                className='botaoCotacao'
+                                                onClick={() => {
+                                                    setjanelaFecharCotacao(true);
+                                                    setCotacaoSelecionada(produto);
+                                                }}
+                                            >
                                                 Resolver
                                             </button>
                                         </td>
@@ -173,6 +183,14 @@ export default function Inicial() {
                     </div>
                 </section>
             </main>
+            {janelaFecharCotacao && (
+                <>
+                    <FecharCotacao
+                        setJanelaCotacoes={setjanelaFecharCotacao}
+                        cotacaoSelecionada={cotacaoSelecionada}
+                    ></FecharCotacao>
+                </>
+            )}
         </>
     )
 }

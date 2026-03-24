@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import './fecharCotacao.css'
 
 export default function FecharCotacao({ setJanelaCotacoes, cotacaoSelecionada }) {
+    const [fornecedorSelecionado, setFornecedorSelecionado] = useState(null);
+
     const listaFornecedores = [
         {
+            id: 1,
             nomeFornecedor: "NutriAnimal Brasil",
             local: "Cuiabá - MT",
             distancia: 450,
@@ -11,6 +15,7 @@ export default function FecharCotacao({ setJanelaCotacoes, cotacaoSelecionada })
             impostos: 45.58
         },
         {
+            id: 2,
             nomeFornecedor: "AgroNutri Alimentos",
             local: "Curitiba - PR",
             distancia: 280,
@@ -19,6 +24,7 @@ export default function FecharCotacao({ setJanelaCotacoes, cotacaoSelecionada })
             impostos: 23.64
         },
         {
+            id: 3,
             nomeFornecedor: "Equus Nutrition",
             local: "Campinas - SP",
             distancia: 120,
@@ -27,6 +33,7 @@ export default function FecharCotacao({ setJanelaCotacoes, cotacaoSelecionada })
             impostos: 58.80
         },
         {
+            id: 4,
             nomeFornecedor: "VetNutri Plus",
             local: "Porto Alegre - RS",
             distancia: 380,
@@ -56,11 +63,12 @@ export default function FecharCotacao({ setJanelaCotacoes, cotacaoSelecionada })
                         {listaFornecedores.map((fornecedor, i) => {
                             return (
                                 <>
-                                    <div className={`cardFornecedor card${i}`} key={i}>
+                                    <div className={`cardFornecedor card${i} ${fornecedorSelecionado === fornecedor.id ? 'selecionado' : ''}`} key={i} onClick={() => setFornecedorSelecionado(fornecedor.id)}>
                                         <h2 className='tituloFonteFina'>{fornecedor.nomeFornecedor}</h2>
                                         <p>{fornecedor.local}</p>
                                         {i == 0 && (<span className='spanUltimoFornecedor'><p>Último fornecedor</p></span>)}
                                         {i == 3 && (<span className='spanSugestaoIA'><p>Sugestão de IA</p></span>)}
+                                        {fornecedorSelecionado === fornecedor.id && (<span className='spanSelecionado'><p>Selecionado</p></span>)}
                                         <hr />
                                         <p><b>Preço do produto: {formatarPreco(fornecedor.preco)}</b></p>
                                         <p>Frete: {formatarPreco(fornecedor.frete)}</p>
