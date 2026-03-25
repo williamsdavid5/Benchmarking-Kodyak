@@ -50,6 +50,13 @@ button:hover {
     background-color: var(--corDestaque2);
 }
 
+input {
+    padding: 6px;
+    border-radius: 5px;
+    border: solid 1px black;
+    background-color: var(--corBackgroundJanela);
+}
+
 .tituloFonteFina {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -89,6 +96,11 @@ table {
     padding: 0;
     width: 100%;
     font-family: 'Roboto', sans-serif;
+    table-layout: auto;
+    /* ajusta conforme o conteúdo */
+    width: auto;
+    /* não força largura fixa */
+    border-collapse: collapse;
 }
 
 /* Cabeçalho fixo */
@@ -120,6 +132,9 @@ table tr {
     background: none;
     /* cursor: pointer; */
     transition: background-color ease-in-out 0.1s;
+    /* white-space: nowrap; */
+    /* impede quebra de linha */
+    /* padding: 8px; */
 }
 
 table tr:hover {

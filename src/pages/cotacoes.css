@@ -37,3 +37,10 @@
 .cotacoesHistorico table {
     font-size: 13px;
 }
+
+.inputPesquisar {
+    width: 400px;
+    background-color: var(--corJanela);
+    border: solid 1px rgb(190, 190, 190);
+    box-sizing: border-box;
+}

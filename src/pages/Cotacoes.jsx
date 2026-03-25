@@ -377,12 +377,15 @@ export default function Cotacoes() {
                     </div>
                 </section>
                 <section className='cotacoesHistorico'>
-                    <p><b>Todas as cotações</b></p>
+                    <span style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <p><b>Todas as cotações</b></p>
+                        <input type="text" name="" id="" placeholder='pesquisar' className='inputPesquisar' />
+                    </span>
                     <div className="tabela-container">
                         <table className="tabela-produtos">
                             <thead>
                                 <tr>
-                                    <th>Código Interno</th>
+                                    <th>Código <br />Interno</th>
                                     <th>Produto</th>
                                     <th>Fornecedor</th>
                                     <th>Local</th>
@@ -390,8 +393,9 @@ export default function Cotacoes() {
                                     <th>Preço atual</th>
                                     <th>Frete</th>
                                     <th>Distância</th>
-                                    <th>Total (com impostos)</th>
+                                    <th>Total <br />(com impostos)</th>
                                     <th>Status</th>
+                                    <th>Data</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -413,6 +417,7 @@ export default function Cotacoes() {
                                                 }
                                             </b>
                                         </td>
+                                        <td>{formatarData(produto.dataFechamento)}</td>
                                     </tr>
                                 ))}
                             </tbody>
