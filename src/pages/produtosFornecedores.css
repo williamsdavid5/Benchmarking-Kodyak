@@ -33,7 +33,7 @@
 }
 
 .fornecedorProdutoCard {
-    min-width: 320px;
+    min-width: 280px;
     height: 360px;
     /* border: solid 1px black; */
     background-color: var(--corBackgroundJanela);
