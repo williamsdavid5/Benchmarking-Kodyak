@@ -37,6 +37,15 @@ button {
     transition: background-color ease-in-out 0.1s;
 }
 
+button:disabled {
+    background-color: gray;
+}
+
+button:disabled:hover {
+    background-color: gray;
+    cursor: auto;
+}
+
 button:hover {
     background-color: var(--corDestaque2);
 }
@@ -53,6 +62,16 @@ button:hover {
     --corBackgroundJanela: rgb(208, 217, 220);
 }
 
+hr {
+    width: 100%;
+}
+
+select {
+    padding: 3px;
+    background-color: var(--corJanela);
+    border: solid 2px var(--corDestaque1);
+    border-radius: 5px;
+}
 
 /* Container padrão para tabelas com rolagem */
 .table-container {

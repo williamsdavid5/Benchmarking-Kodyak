@@ -87,7 +87,11 @@ export default function FecharCotacao({ setJanelaCotacoes, cotacaoSelecionada })
                         <h2 className='tituloFonteFina'>Você pagou <b>{formatarPreco(cotacaoSelecionada.ultimoPreco)}</b> na última compra</h2>
                     </div>
                     <div className='auxBotoesJanela'>
-                        <button onClick={() => setJanelaCotacoes(false)}>
+                        <button
+                            onClick={() => setJanelaCotacoes(false)}
+                            disabled={fornecedorSelecionado == null}
+                            className={`${fornecedorSelecionado == null ? 'botaoDesabilitado' : ''}`}
+                        >
                             Enviar para avaliação
                         </button>
                         <button onClick={() => setJanelaCotacoes(false)}>
