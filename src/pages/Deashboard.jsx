@@ -11,7 +11,11 @@ import {
     PieChart,
     Pie,
     Cell,
-    Legend
+    Legend,
+    ComposedChart,
+    Line,
+    Brush,
+    ErrorBar
 } from 'recharts';
 
 
@@ -37,12 +41,13 @@ export default function Dashborad() {
 
 
     const dadosFornecedores = [
-        { nome: "NutriAnimal Brasil", porcentagem: 40 },
+        { nome: "NutriAnimal Brasil", porcentagem: 20 },
         { nome: "AgroNutri Alimentos", porcentagem: 35 },
-        { nome: "Equus Nutrition", porcentagem: 25 }
+        { nome: "Equus Nutrition", porcentagem: 25 },
+        { nome: "sugestão IA", porcentagem: 20 }
     ];
 
-    const CORES = ["var(--corDestaque1)", "var(--corDestaque2)", "var(--corDestaque3)"];
+    const CORES = ["var(--corDestaque1)", "var(--corDestaque2)", "var(--corDestaque3)", "red"];
 
     const RADIAN = Math.PI / 180;
 
@@ -66,6 +71,34 @@ export default function Dashborad() {
             </text>
         );
     };
+
+    const dadosGastos = [
+        { mes: "Jan", gasto: 1200 },
+        { mes: "Fev", gasto: 1500 },
+        { mes: "Mar", gasto: 1100 },
+        { mes: "Abr", gasto: 1800 },
+        { mes: "Mai", gasto: 1400 },
+        { mes: "Jun", gasto: 1600 },
+        { mes: "Jul", gasto: 1700 },
+        { mes: "Ago", gasto: 1300 },
+        { mes: "Set", gasto: 1250 },
+        { mes: "Out", gasto: 1900 },
+        { mes: "Nov", gasto: 1750 },
+        { mes: "Dez", gasto: 2000 }
+    ];
+
+    // média móvel simples (janela 3 meses)
+    const dadosComMedia = dadosGastos.map((item, index, arr) => {
+        const janela = arr.slice(Math.max(0, index - 2), index + 1);
+        const media =
+            janela.reduce((acc, cur) => acc + cur.gasto, 0) / janela.length;
+
+        return { ...item, media };
+    });
+
+    // cores personalizáveis
+    const COR_BARRA = "var(--corDestaque1)";
+    const COR_LINHA = "var(--corDestaque2)";
 
     return (
         <>
@@ -149,6 +182,24 @@ export default function Dashborad() {
                         <p><b>Diferença de gastos em relação ao mês anterior:</b></p>
                         <h1 style={{ color: 'green' }}>R$ -5.622,00</h1>
                         <p>diferença negativa indica que você gastou menos!</p>
+                    </div>
+                    <div className='bloco graficoGastoAno'>
+                        <p><b>Gasto por mês e média móvel</b></p>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <ComposedChart data={dadosComMedia}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="mes" />
+                                <YAxis />
+                                <Tooltip />
+                                <Bar dataKey="gasto" fill={COR_BARRA} />
+                                <Line
+                                    type="linear"
+                                    dataKey="media"
+                                    stroke={COR_LINHA}
+                                    dot={false}
+                                />
+                            </ComposedChart>
+                        </ResponsiveContainer>
                     </div>
                 </section>
             </main>
